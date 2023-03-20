@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pool-json
+data:
+  pool.json: |-
+    {
+    "name": "Elden Pool",
+    "description": "In passing, I lived my own life with Cardano's blessings.",
+    "ticker": "ELDEN",
+    "homepage": "https://eldenpool.com"
+    }
