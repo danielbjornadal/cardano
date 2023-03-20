@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "kubernetes://schema/v1@configmap": "file:///home/daniel/dev/cardano/kubernetes/metadata/configmap.yml"
+    }
+}

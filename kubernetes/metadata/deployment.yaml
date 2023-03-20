@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metadata
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metadata
+  template:
+    metadata:
+      labels:
+        app: metadata
+    spec:
+      containers:
+        - name: metadata
+          image: nginx:stable-alpine
+          resources:
+            limits:
+              cpu: "1"
+              memory: 1Gi
+            requests:
+              cpu: 10m
+              memory: 50Mi
+          volumeMounts:
+            - mountPath: "/usr/share/nginx/html/pool.json"
+              name: pool-json
+              readOnly: true
+              subPath: pool.json
+      volumes:
+        - name: pool-json
+          configMap:
+            name: pool-json
+            optional: false
